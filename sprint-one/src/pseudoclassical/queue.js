@@ -24,4 +24,4 @@ Queue.prototype.size = function(){
 };
 
 
-var Plates = new Queue();
+var line = new Queue();
