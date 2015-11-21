@@ -5,6 +5,9 @@ var HashTable = function(){
 
 HashTable.prototype.insert = function(k, v){
   var i = getIndexBelowMaxForKey(k, this._limit);
+  console.log(k, v);
+  this._storage[i] = v;
+
 
   //check if there is a buckett
   //if no bucket make one
@@ -13,18 +16,21 @@ HashTable.prototype.insert = function(k, v){
   // key exisit
   // update
 
-  //if no key 
   //create tuple 
   //add tuple 
 };
 
 HashTable.prototype.retrieve = function(k){
   var i = getIndexBelowMaxForKey(k, this._limit);
-
+  if(this._storage[i]){
+    return this._storage[i];
+  } 
+  return null;
 };
 
 HashTable.prototype.remove = function(k){
-
+  var i = getIndexBelowMaxForKey(k, this._limit);
+  delete this._storage[i]
 };
 
 
