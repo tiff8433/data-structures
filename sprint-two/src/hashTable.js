@@ -5,6 +5,17 @@ var HashTable = function(){
 
 HashTable.prototype.insert = function(k, v){
   var i = getIndexBelowMaxForKey(k, this._limit);
+
+  //check if there is a buckett
+  //if no bucket make one
+
+  // if there is a bucket
+  // key exisit
+  // update
+
+  //if no key 
+  //create tuple 
+  //add tuple 
 };
 
 HashTable.prototype.retrieve = function(k){
