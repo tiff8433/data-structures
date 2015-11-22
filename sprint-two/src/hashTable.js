@@ -46,7 +46,6 @@ HashTable.prototype.remove = function(k){
       delete bucket[i][0];
     }
   }
-
 };
 
 
