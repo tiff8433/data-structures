@@ -35,20 +35,31 @@ binarySearchTreeMethods.insert = function(val){
 };
 
 binarySearchTreeMethods.contains = function(val){
-  if (this.value === val) {
+  if (this.value === val){
     return true;
+  } else if (this.value < val){
+    if(!this.right) {
+      return false;
+    } else {
+      return this.right.contains(val);
+    }
+  } else if (this.value > val) {
+    if(!this.left){
+      return false;
+    } else {
+      return this.left.contains(val);
+    }
   }
-  if (val > this.value) {
-    this.right.contains(val); 
-  }
-  if (val < this.value) {
-    this.left.contains(val); 
-  }
-  return false;
 };
 
 binarySearchTreeMethods.depthFirstLog = function(cb){
-
+  cb(this.value);
+  if (this.right) {
+    this.right.depthFirstLog(cb);
+  }
+    if (this.left) {
+    this.left.depthFirstLog(cb);
+  }
 };
 /*
  * Complexity: What is the time complexity of the above functions?
